@@ -1,5 +1,5 @@
 <?php
-	function ValidarFormulario()
+	function ValidarForm()
 	{
 		$validacao=array();
 		foreach ($_POST as $key => $value) 

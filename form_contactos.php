@@ -14,6 +14,7 @@
 	<?php
 		require_once 'ligacaoBD.php';
 		require_once 'testaSessao.php';
+		$validacao=array();
 
 		if (isset($_GET["id"])) 
 		{
@@ -37,8 +38,9 @@
 				$validacao= ValidarForm();
 			}
 		}
+
 	?>
-	<form action="<?php($operacao=="update")? $_SERVER["PHP_SELF"]."?id=".$_GET["id"]:$_SERVER["PHP_SELF"];?>" method="post">
+	<form action="<?php ($operacao=="update")? $_SERVER["PHP_SELF"]."?id=".$_GET["id"]:$_SERVER["PHP_SELF"];?>" method="post">
 		<b>Primeiro Nome:</b>
 			<?php 
 				if($_POST && in_array("primeiro_nome", $validacao))
