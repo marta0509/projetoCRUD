@@ -94,7 +94,8 @@
 	if ($_POST && count($validacao)==0) 
 	{
 		if ($operacao=="insert") 
-		{
+		{	
+			$con=ligaBD();
 			$stm=$con->prepare("insert into contactos values(0,?,?)");
 			$stm->bind_param("ss",$_POST["primeiro_nome"],$_POST["ultimo_nome"]);
 
@@ -113,6 +114,7 @@
 
 		if ($operacao=="update") 
 		{
+			$con=ligaBD();
 			$stm=$con->prepare("update contactos set primeiro_nome=?, ultimo_nome=? where id_contacto=?");
 
 			$stm->bind_param("ssi",$_POST["primeiro_nome"],$_POST["ultimo_nome"],$_GET["id"]);

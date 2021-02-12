@@ -10,5 +10,6 @@
 				return $validacao;
 			}
 		}
+		return $validacao;
 	}
 ?>
